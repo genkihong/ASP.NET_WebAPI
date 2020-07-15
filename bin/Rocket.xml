@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Rocket</name>
+    </assembly>
+    <members>
+        <member name="T:Rocket.Common.BodyAndUriParameterBinding">
+            <summary>
+            Bind a model to both body and URI-parameters.
+            Note: body is bound first and then URI.
+            Modified from http://stackoverflow.com/a/24846821.
+            </summary>
+        </member>
+        <member name="M:Rocket.Controllers.ApiMembersController.SendNewPwdToMember(Rocket.Models.Member)">
+            <summary>
+            發送重設密碼信件
+            </summary>
+            <param name="member"></param>
+        </member>
+        <member name="M:Rocket.Controllers.ApiProductsController.GetAdminProducts">
+            <summary>
+            所有商品(會員)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rocket.Controllers.ApiProductsController.GetProducts">
+            <summary>
+            所有商品(免登入)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Rocket.Controllers.ApiProductsController.GetProduct(System.Int32)">
+            <summary>
+            單一商品(免登入)
+            </summary>
+            <param name="productId">商品編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rocket.Controllers.ApiProductsController.PatchProduct(Rocket.Models.PatchProduct)">
+            <summary>
+            修改商品
+            </summary>
+            <param name="patchProduct">修改商品</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rocket.Controllers.ApiProductsController.PostProduct(Rocket.Models.Product)">
+            <summary>
+            新增商品
+            </summary>
+            <param name="product">新增商品</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rocket.Controllers.ApiProductsController.PostUploadProductImage(System.Int32)">
+            <summary>
+            上傳商品圖片
+            </summary>
+            <param name="productId">商品編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rocket.Controllers.ApiProductsController.DeleteProduct(System.Int32)">
+            <summary>
+            刪除商品
+            </summary>
+            <param name="productId">商品編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:Rocket.Models.Utility.GenerateToken(Rocket.Models.Member)">
+            <summary>
+            JWT 驗證
+            </summary>
+            <param name="id"></param>
+            <returns>token</returns>
+        </member>
+        <member name="M:Rocket.Models.Utility.GetParameter(System.String)">
+            <summary>
+            GetParameter
+            </summary>
+            <param name="token"></param>
+            <returns>id</returns>
+        </member>
+        <member name="M:Rocket.Models.Utility.CreateSalt">
+            <summary>
+            產生Salt
+            </summary>
+            <returns>Salt</returns>
+        </member>
+        <member name="M:Rocket.Models.Utility.GenerateHashWithSalt(System.String,System.String)">
+            <summary>
+            Computes a salted hash of the password and salt provided and returns as a base64 encoded string.
+            </summary>
+            <param name="password">The password to hash.</param>
+            <param name="salt">The salt to use in the hash.</param>
+        </member>
+        <member name="M:Rocket.Models.Utility.SetAuthenTicket(System.String,System.String)">
+            <summary>
+            將使用者資料寫入cookie,產生AuthenTicket
+            </summary>
+            <param name="userData">使用者資料</param>
+            <param name="userId">UserAccount</param>
+        </member>
+        <member name="M:Rocket.Models.Utility.UploadImage(System.Web.HttpPostedFile)">
+            <summary>
+            儲存上傳圖片
+            </summary>
+            <param name="uploadFile">HttpPostedFile 物件</param>
+            <returns>儲存檔名</returns>
+        </member>
+        <member name="M:Rocket.Models.Utility.UploadImage(System.Web.HttpPostedFileBase)">
+            <summary>
+            儲存上傳圖片
+            </summary>
+            <param name="upfile">HttpPostedFile 物件</param>
+            <returns>儲存檔名</returns>
+        </member>
+        <member name="M:Rocket.Models.Utility.SendEmail(System.String,System.String,System.String)">
+            <summary>
+            寄信函數
+            </summary>
+            <param name="subject"></param>
+            <param name="body"></param>
+            <param name="receiveMail"></param>
+        </member>
+        <member name="M:Rocket.Filter.JwtAuthFilter.setErrorResponse(System.Web.Http.Controllers.HttpActionContext,System.String)">
+            <summary>
+            錯誤訊息
+            </summary>
+            <param name="actionContext"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Rocket.Filter.JwtAuthFilter.IsTokenExpired(System.String)">
+            <summary>
+            驗證token時效
+            </summary>
+            <param name="dateTime"></param>
+            <returns>bool</returns>
+        </member>
+    </members>
+</doc>
